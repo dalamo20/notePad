@@ -19,7 +19,8 @@ if (process.env.NODE_ENV === "production") {
 app.get("/api/todos", (req, res) => {
   db.Todo.find({})
     .then(results => res.json(results))
-    .catch(err =>{ console.log(err);
+    .catch(err => {
+      console.log(err);
       res.status(422).json(err);  //backend and frontend get error
     });
 });
@@ -33,21 +34,22 @@ app.post("/api/todo", (req, res) => {
     category: req.body.category
   };
   db.Todo
-  .create(newTodo)
-  .then(results => res.json(results))
-  .catch(err =>{ console.log(err);
-    res.status(422).json(err);  //backend and frontend get error
-  });
+    .create(newTodo)
+    .then(results => res.json(results))
+    .catch(err => {
+      console.log(err);
+      res.status(422).json(err);  //backend and frontend get error
+    });
 });
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 mongoose.connect(process.env.MONGODB_URL || "mongodb://User:password1@ds163510.mlab.com:63510/heroku_4fdm4lqg")
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });

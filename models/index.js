@@ -1,3 +1,3 @@
-module.exprots = {
+module.exports = {
     Todo: require("./Todo")
 }
