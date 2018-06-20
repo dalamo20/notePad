@@ -19,10 +19,10 @@ const todoSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
     category: {
-        type: Sring
+        type: String
     }
 });
 
