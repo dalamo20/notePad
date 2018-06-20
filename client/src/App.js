@@ -1,21 +1,20 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import Welcome from "./pages/Welcome";
+import List from "./pages/List";
+import Details from "./pages/Details";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  //Parent most container is Router in App.js when using react
+  //Router requires a single child so we wrap everything in empty div
+  < Router >
+  
+  < div >
+  <Route exact path="/" component={Welcome} />
+  <Route exact path="/list" component={List} />
+  <Route exact path="/todo/:id" component={Details} />
+  </div >
+</Router >
+)
 
 export default App;
