@@ -1,14 +1,18 @@
-import React, {Component} from "react";
+import React, { Component } from "react"
 
 class Details extends Component {
     state = {
 
     }
 
-    render () {
+    render() {
         return (
-            <h1>The details page!</h1>
+            <div className="container">
+                <div className="col-6">
+                </div>
+            </div>
         )
     }
 }
+
 export default Details

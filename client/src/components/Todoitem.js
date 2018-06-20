@@ -1,9 +1,14 @@
-import React from "react";
+import React from "react"
 
 const TodoItem = props => (
     <div className="row">
         <div className="col-1">
-            Check
+            <div className="row">
+                <input type="checkbox" />
+            </div>
+            <div className="row">
+                X
+            </div>
         </div>
         <div className="col-10">
             <div className="row">
@@ -12,10 +17,11 @@ const TodoItem = props => (
             <div className="row">
                 Deadline
             </div>
-            <div className="col-1">
-                Note
-            </div>
+        </div>
+        <div className="col-1">
+            Note
         </div>
     </div>
-        )
+)
+
 export default TodoItem;
